@@ -1,0 +1,171 @@
+:root {
+  --light-primary-color: #323238;
+  --light-secondary-color: #C8A2C8;
+  --light-tertiary-color: #E1E1E6;
+  --light-quartenary-color: #FFFFFF;
+  --dark-primary-color: #FFFFFF;
+  --dark-secondary-color: #800080;
+  --dark-tertiary-color: #29292E;
+  --dark-quartenary-color: #121214;
+  --primary-color: var(--dark-primary-color);
+  --secondary-color: var(--dark-secondary-color);
+  --tertiary-color: var(--dark-tertiary-color);
+  --quartenary-color: var(--dark-quartenary-color);
+  --activetext-color: #FFFFFF;
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./images/lofi.jpg');
+  background-color: var(--quartenary-color);
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 5.0rem;
+  gap: 4.0rem;
+  position: relative;
+  padding: 12.0rem 5.0rem;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+
+svg {
+  fill: var(--primary-color);
+}
+
+input[type="range"] {
+  width: 9.0rem;
+  height: 4px;
+  background: var(--primary-color);
+  outline: none;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  background: var(--primary-color);
+  cursor: pointer;
+  border: 0;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 1.6rem;
+  background: var(--primary-color);
+  cursor: pointer;
+  border: 0;
+}
+
+.half {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 3.0rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-areas: "A B" "C D";
+  gap: 3.2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  padding: 2.4rem;
+  border-radius: 2.4rem;
+  background-color: var(--tertiary-color);
+}
+/*body #forestCard.card{
+  background: url('./images/fogueira.jpg');
+}*/
+
+.card input[type="range"] {
+  width: 9.0rem;
+}
+
+.cards .active {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.cards .active svg, .cards .active input {
+  fill: var(--activetext-color);
+}
+
+.cards .active input[type="range"],
+.cards .active input[type="range"]::-webkit-slider-thumb,
+.cards .active input[type="range"]::-moz-range-thumb {
+  background: var(--activetext-color);
+}
+
+.hide {
+  display: none;
+}
+
+#timer {
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+  text-align: center;
+}
+
+#themeChanger {
+  position: absolute;
+  top: 6.0rem;
+  right: 6.0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 780px) {
+  body {
+      flex-direction: row;
+  }
+
+  .half:nth-child(1) {
+      align-items: end;
+  }
+  
+  .half:nth-child(2) {
+      align-items: start;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+      gap: 12.0rem;
+  }
+}
